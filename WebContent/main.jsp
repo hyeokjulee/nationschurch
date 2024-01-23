@@ -140,6 +140,7 @@
                             <p style="font-weight:bold; color:#747474;">갤러리</p>
                             <figure class="effect-bubba">
                                 <div id="imgList" style="width:100%; height:400px;"></div>
+
                                 <figcaption>
                                     <h2>갤러리</h2>
                                     <p>갤러리로 이동</p>
@@ -233,7 +234,7 @@
 		<script src="js/theme-scripts.js"></script>
 		
 		<!-- 카카오맵 -->
-		<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=*************"></script>
+		<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=***************"></script>
 
 		<script>
 		    <!-- 카카오맵 start -->
@@ -308,26 +309,33 @@
 
 			function searchFunction() {
 				//TODO: 리스트 출력 처리 하세요
-					$.ajax({
-						type:'post',
-						url:'galleryProc.jsp',
+                $.ajax({
+                    type:'post',
+                    url:'galleryProc.jsp',
 
-						success:function(data){
-							var data = JSON.parse(data.trim());
-							
-							var str = '';
-							var img0 = data[0].gupfolder + '/' +data[0].guuid + '_' + data[0].gfilename;
-							var img1 = data[1].gupfolder + '/' +data[1].guuid + '_' + data[1].gfilename;
-							var img2 = data[2].gupfolder + '/' +data[2].guuid + '_' + data[2].gfilename;
-							var img3 = data[3].gupfolder + '/' +data[3].guuid + '_' + data[3].gfilename;
-							str += ''
-								+'<img src="'+img0 +'" alt="image/demo/author-2.jpg" class="img-responsive" style="width:50%; height:200px;float: right;" />'
-								+'<img src="'+img1 +'" alt="image/demo/author-2.jpg" class="img-responsive" style="width:50%; height:200px;float: left;" />'
-								+'<img src="'+img2 +'" alt="image/demo/author-2.jpg" class="img-responsive" style="width:50%; height:200px;float: left;" />'
-								+'<img src="'+img3 +'" alt="image/demo/author-2.jpg" class="img-responsive" style="width:50%; height:200px;float: right;" />'
-							$("#imgList").html(str);
-						}
-					});	
+                    success:function(data){
+                        var data = JSON.parse(data.trim());
+                        var str = '';
+                        var img0 = 'images/demo/author-2.jpg';
+                        var img1 = 'images/demo/author-2.jpg';
+                        var img2 = 'images/demo/author-2.jpg';
+                        var img3 = 'images/demo/author-2.jpg';
+
+                        if (data.length > 0) {
+                            img0 = data[0].gupfolder + '/' + data[0].guuid + '_' + data[0].gfilename;
+                            img1 = data[1].gupfolder + '/' + data[1].guuid + '_' + data[1].gfilename;
+                            img2 = data[2].gupfolder + '/' + data[2].guuid + '_' + data[2].gfilename;
+                            img3 = data[3].gupfolder + '/' + data[3].guuid + '_' + data[3].gfilename;
+                        }
+
+                        str += '<img src="' + img0 + '" class="img-responsive" style="width:50%; height:200px;float: left;" />'
+                            + '<img src="' + img1 + '" class="img-responsive" style="width:50%; height:200px;float: right;" />'
+                            + '<img src="' + img2 + '" class="img-responsive" style="width:50%; height:200px;float: left;" />'
+                            + '<img src="' + img3 + '" class="img-responsive" style="width:50%; height:200px;float: right;" />';
+
+                        $("#imgList").html(str);
+                    }
+                });
 			}
 
 

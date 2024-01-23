@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%
-	String correctpw = "비밀번호";
+	String correctpw = "1111";
 	String pw = request.getParameter("pw");
 
 	if(pw != null && pw.equals(correctpw)){
