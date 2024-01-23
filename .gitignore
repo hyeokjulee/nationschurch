@@ -6,8 +6,8 @@ context.xml
 /bin/
 /build/
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+
+# 추가
+.idea/
+Save-The-Web_heaveniscoming.iml
+out/
