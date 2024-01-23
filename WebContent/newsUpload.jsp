@@ -19,12 +19,15 @@
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Enumeration"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
 %>
+
 <%
 	// 해당 앱 내 업로드 경로 설정
 	//String uploadPath = "/resources/news";
+
 	// 실제 업로드 저장 경로 설정
 	//String savePath = application.getRealPath(uploadPath);
 	
@@ -33,7 +36,6 @@
 	String savePath = "/nationschurch/tomcat/webapps" + uploadPath;
 	
 	try {
-	
 		File uploadDir = new File(uploadPath);
 		if(uploadDir.exists()){
 			FileUtils.deleteDirectory(uploadDir);
@@ -45,7 +47,6 @@
 			FileUtils.deleteDirectory(saveDir);
 		}
 		saveDir.mkdirs();
-
     } catch (IOException e) {
         e.printStackTrace();
     }
@@ -53,11 +54,11 @@
 	int maxSize=50*1024*1024; //50M byte제한
 	//업로드 객체를 생성해주는 팩토리 객체 : 주로 설정을 담당(서버의 저장경로, 파일의용량제한..)
 	DefaultFileItemFactory itemFactory = new DefaultFileItemFactory();
-	itemFactory.setRepository(new File(savePath));//저장될 위치!!!, 물리적인 저장이 아닌, 임시디렉토리
+	itemFactory.setRepository(new File(savePath)); //저장될 위치!!!, 물리적인 저장이 아닌, 임시디렉토리
 	itemFactory.setSizeThreshold(maxSize); //용량을 지정한 크기로 제한
 	
 	//이 객체가 실제 업로드를 수행함
-	ServletFileUpload upload = new ServletFileUpload(itemFactory);//설정정보를 생성자의 인수로 전달!!!
+	ServletFileUpload upload = new ServletFileUpload(itemFactory); //설정정보를 생성자의 인수로 전달!!!
 	
 	//FileItem 은 클라이언트의 전송 정보 하나 하나를 의미한다. 즉 html에서의 input 텍스트박스, file 컴포넌트 들..
 	//우리의 경우 input type="text" 가 FileItem에 담기고 
@@ -82,10 +83,10 @@
 			System.out.println("realpath : " + savePath);
 			System.out.println("uuidFileName : " + uuidFileName);
 		
-			//String ext = FileManager.getExtend(item.getName());//확장자 구하기
+			//String ext = FileManager.getExtend(item.getName()); //확장자 구하기
 			//String filename = System.currentTimeMillis()+"."+ext;
 			
-			File file =new File(savePath+"/"+uuidFileName);//비어있는 파일
+			File file =new File(savePath+"/"+uuidFileName); //비어있는 파일
 			item.write(file); //저장 정보를 File 클래스의 인스턴스로 전달!!
 			
 			// DB 전부 삭제

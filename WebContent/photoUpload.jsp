@@ -16,13 +16,15 @@
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Enumeration"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
 %>
+
 <%
-	
 	// 해당 앱 내 업로드 경로 설정
 	//String uploadPath = "/resources/gallery";
+
 	// 실제 업로드 저장 경로 설정
 	//String savePath = application.getRealPath(uploadPath);
 	

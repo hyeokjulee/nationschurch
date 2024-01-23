@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
@@ -13,6 +14,7 @@
 			</button>
 			<a class="navbar-brand page-scroll" href="#page-top"><img src="images/logo.png" height="65" alt="Sanza theme logo"></a>
 		</div>
+
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
