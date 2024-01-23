@@ -1,13 +1,9 @@
 /.metadata/
-/.classpath
-/.project
 /.settings/
-context.xml
+/out/
 /bin/
 /build/
-
-
-# 추가
-.idea/
-Save-The-Web_heaveniscoming.iml
-out/
+/.idea/
+/.classpath
+/.project
+/*.iml
