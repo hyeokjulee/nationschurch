@@ -1,26 +1,21 @@
-## 1. Introduction
+## 1. 소개
 
 나라가임하는교회 홈페이지입니다. 운영에 어려움이 있는 개척교회를 돕기 위해 봉사 목적으로 개발되었습니다.
-<br>
-링크 : http://heaveniscoming.org
 
 <br><br>
 
-## 2. Tech Stack
+## 2. 기술
 
-- Backend : Java 8
-- DBMS : MariaDB 10.0
-- Template engine : JSP 2.3
-- IDE : Eclipse
-- Deployment : Tomcat 8.5, CentOS 7
-- Collaboration tool : Zoom, Notion, Google Workspace
+- 개발 : Java 8, JSP 2.3, JDBC
+- 운영 : Cafe24, CentOS 7, Tomcat 8.5, MariaDB 10.0
+- 외부 서비스 연동 : Kakao Map API
 
 <br><br>
 
 ## 3. ERD
 
 - 교회소식, 주보, 갤러리 테이블이 있으며 각 테이블은 업로드된 이미지 파일에 대한 정보를 포함합니다.
-- 소규모의 개척교회이기에 관리자는 목사님 한분입니다. 관리자 로그인 기능이 있지만 회원 테이블이 BD에 있을 필요는 없다고 판단해 넣지 않았습니다.
+- 소규모의 개척교회이기에 관리자는 목사님 한분입니다. 관리자 로그인 기능이 있지만 회원 기능 전체를 넣을 필요는 없었기 때문에 회원 테이블은 따로 넣지 않았습니다.
 <img width="500" src="ERD.png">
 
 <br><br>
@@ -31,7 +26,7 @@
 
 <br><br>
 
-## 5. Description
+## 5. 설명
 
 ### 메인 페이지
 
